@@ -7,4 +7,8 @@ defmodule Blog.MyBlog do
     def list_articles() do
         Repo.all(Article)
     end
+
+    def get_article!(id) do
+        Repo.get!(Article, id)
+    end
 end
