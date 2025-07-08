@@ -11,4 +11,8 @@ defmodule Blog.MyBlog do
     def get_article!(id) do
         Repo.get!(Article, id)
     end
+
+    def change_article(%Article{} = article, attrs \\ %{}) do
+        Article.changeset(article, attrs)
+    end
 end
