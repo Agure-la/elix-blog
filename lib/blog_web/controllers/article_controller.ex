@@ -2,7 +2,7 @@ defmodule BlogWeb.ArticleController do
     use BlogWeb, :controller
 
     def index(conn, _params) do
-        articles = MyBlog.list_articles()
+        articles = Blog.MyBlog.list_articles()
         render(conn, :index, articles: articles)
     end
 end
