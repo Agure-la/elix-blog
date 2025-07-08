@@ -37,10 +37,9 @@ defmodule BlogWeb.Router do
     scope "/", BlogWeb do
       pipe_through :browser
 
-      live_dashboard "/dashboard", metrics: BlogWeb.Telemetry
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
-      get "/", PageController, :home
+      get "/", ArticleController, :index
       get "/articles", ArticleController, :index
+      get "/articles/:id", ArticleController, :show
     end
   end
 end
